@@ -108,8 +108,8 @@ The following screenshots are included in the /screenshots directory as proof of
 * NAT Gateway status
 
 Internet Gateway attachment to the VPC
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Secure AWS VPC Architecture Diagram](architecture/aws_vpc_architecture_diagram.png)
+
 ## 9. Conclusion
 
 This project successfully demonstrates the implementation of a secure AWS VPC architecture using industry best practices. By separating public and private resources, controlling routing paths, and enforcing security boundaries, the infrastructure ensures both functionality and protection of sensitive resources within the cloud environment.
-
