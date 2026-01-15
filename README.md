@@ -90,6 +90,15 @@ Network Access Control Lists (NACLs) are applied at the subnet level to control 
 
 ## 7. Connectivity Testing and Validation
 
+To validate the network configuration, we ensured that resources in both subnets behave as intended:
+
+Private Subnet: Outbound internet access is enabled through the NAT Gateway located in the public subnet. A test EC2 instance deployed in the private subnet has no public IP and no inbound security group rules, ensuring it cannot be accessed directly from the internet. This setup confirms that private resources can initiate outbound connections while remaining protected from direct inbound access.
+
+Public Subnet: Resources in the public subnet have direct internet access via the Internet Gateway, as configured in the public route table.
+
+These validations confirm that the security and connectivity requirements of the project have been met
+
+
 To validate the network configuration, the following tests are performed:
 
 * A resource deployed in the private subnet is able to initiate outbound internet connections (e.g., software updates), confirming correct NAT Gateway configuration.
@@ -109,7 +118,39 @@ The following screenshots are included in the /screenshots directory as proof of
 
 Internet Gateway attachment to the VPC
 ![Secure AWS VPC Architecture Diagram](architecture/aws_vpc_architecture_diagram.png)
+![VPC CIDR Block](screenshots/vpc-cidr.png)
+![Public Subnet Route Table](screenshots/route-table-public.png)
+![Private Subnet Route Table](screenshots/route-table-private.png)
+![NAT Gateway Status](screenshots/nat-gateway.png)
+![Internet Gateway Attachment](screenshots/internet-gateway.png)
+![NACL Configuration](screenshots/network-acl.png)
+![Instances](screenshots/PRIVATE-INSTANCE-DETAILS.png)
 
 ## 9. Conclusion
 
 This project successfully demonstrates the implementation of a secure AWS VPC architecture using industry best practices. By separating public and private resources, controlling routing paths, and enforcing security boundaries, the infrastructure ensures both functionality and protection of sensitive resources within the cloud environment.
+
+## 10. Future Improvements
+
+Future improvements to this project could include:
+
+* Implementing additional security controls, such as security groups and network access control lists (NACLs)
+
+* Adding additional subnets to support a more complex network architecture
+
+* Implementing additional connectivity options, such as VPC peering or VPN
+
+* Implementing additional security controls, such as security groups and network access control lists (NACLs)
+
+* Adding additional subnets to support a more complex network architecture
+
+* Implementing additional connectivity options, such as VPC peering or VPN
+
+## 11. Contact Information
+
+For any questions or concerns, please contact Boipelo on [Github](https://github.com/boipelo-codes)
+
+## 12. Documentation
+
+Here is the documentation for the project:[Secure AWS VPC Infrastructure Deployment](https://capeitinitiative-my.sharepoint.com/:w:/g/personal/boipelo_ngakane_capaciti_org_za/IQCy7muGTtOJTZc0DCw-j7qoAeZ1dr3xc7nN1NyZRl74cEU?e=NJlWVB).
+
