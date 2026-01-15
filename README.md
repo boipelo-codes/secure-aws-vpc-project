@@ -99,6 +99,13 @@ Public Subnet: Resources in the public subnet have direct internet access via th
 These validations confirm that the security and connectivity requirements of the project have been met
 
 
+To validate the network configuration, the following tests are performed:
+
+* A resource deployed in the private subnet is able to initiate outbound internet connections (e.g., software updates), confirming correct NAT Gateway configuration.
+
+* Attempts to directly access the private subnet from the public internet fail, confirming that private resources are not publicly reachable.
+
+These tests demonstrate that the security and connectivity requirements of the project have been met.
 ## 8. Evidence and Screenshots
 
 The following screenshots are included in the /screenshots directory as proof of the deployed infrastructure:
